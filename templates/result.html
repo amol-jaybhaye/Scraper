@@ -1,0 +1,89 @@
+<html lang = "en">  
+   <head>  
+      <meta charset = "utf-8">  
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">  
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">        
+  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+<style>  
+.main {  
+    width: 50%;  
+    margin: 50px auto;  
+}  
+.has-search .form-control {  
+    padding-left: 2.375rem;  
+}  
+.has-search .form-control-feedback {  
+    position: absolute;  
+    z-index: 2;  
+    display: block;  
+    width: 2.375rem;  
+    height: 2.375rem;  
+    line-height: 2.375rem;  
+    text-align: center;  
+    pointer-events: none;  
+    color: #aaa;  
+}  
+.form-control-underlined {  
+  border-width: 0;  
+  border-bottom-width: 1px;  
+  border-radius: 0;  
+  padding-left: 0;  
+}  
+body {  
+  background: #712cf9;
+}  
+.form-control:focus {  
+  box-shadow: none;  
+}  
+h2 {  
+font-family: 'Indie Flower', cursive;  
+font-size: 32px;  
+  color: white;  
+  font-weight: bold;  
+  margin-top: 20px;  
+}  
+.form-control::placeholder {
+  font-size: 0.95rem;  
+  color: #aaa;  
+  font-style: italic;  
+}
+table, th, td {
+  border:2px solid black;
+}
+</style>  
+<body>  
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-lg-8 mx-auto">
+        <h4 class="text-white mb-4 mt-5 font-italic">
+          {{do_url}}
+        </h4>
+        <hr>
+      <div class="bg-white p-5 rounded shadow">
+          <p>Total Worlds : {{do_total_world}}</p>
+          <table  style="width:40%">
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for key, value in do_word_count.items %}
+                <tr>
+                  <td>
+                    {{ key }}
+                  </td>
+                  <td>
+                    {{ value }}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>  
+</html>  
